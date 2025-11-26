@@ -9,7 +9,7 @@ def pytest_addoption(parser):
     parser.addoption(
         '--browserVersion',
         help = 'Версия браузера в котором будут запущены тесты',
-        default='128.0'
+        default='127.0'
     )
 
 

@@ -33,8 +33,9 @@ def setup_browser(request):
     })
     login = os.getenv('LOGIN')
     password = os.getenv('PASSWORD')
+    host_selenoid = os.getenv('HOST')
 
-    browser.config.driver_remote_url = f"https://{login}:{password}@selenoid.autotests.cloud/wd/hub"
+    browser.config.driver_remote_url = f"https://{login}:{password}@{host_selenoid}"
     browser.config.driver_options = options
     browser.config.timeout = 6
 

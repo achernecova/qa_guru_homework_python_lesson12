@@ -1,6 +1,8 @@
+from selene import browser
+
 from tests.demoqa.pages.left_panel_element import LeftPanelElement
 from tests.demoqa.pages.simple_page import SimplePage
-from selene import browser
+
 
 class Application:
     def __init__(self):

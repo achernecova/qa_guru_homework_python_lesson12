@@ -1,16 +1,7 @@
-# сама панель - поиск css по классу .left-pannel
-# бургер Element (//*[@class='group-header'])[1]
-
 from selene import browser
 from selenium.webdriver.common.by import By
 
 from tests.demoqa.pages.simple_page import SimplePage
-
-
-# Нашли левую панель.
-# Клик по бургеру - Element.
-# Клик в Text Box - id = item-0
-# Вернуть страницу с Text Box
 
 
 class LeftPanelElement:

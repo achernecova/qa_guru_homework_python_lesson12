@@ -3,11 +3,10 @@ import allure
 from tests.demoqa.pages.application import app
 from tests.demoqa.pages import users
 from tests.demoqa.pages.users import User
-from utils import attach
 
 
 @allure.title('Successful fill form with app manager')
-def test_registration_in_simple_form_with_app_manager(setup_browser):
+def test_registration_in_simple_form_with_app_manager():
     with allure.step('Открываем страницу'):
         app.left_panel.open()
     with allure.step('Заполняем поля и проверяем отправку'):
@@ -16,7 +15,7 @@ def test_registration_in_simple_form_with_app_manager(setup_browser):
     # app.simple_page.should_have_simple_register(users.first_user)
 
 @allure.title('Successful fill form with user in dataclass')
-def test_registration_in_simple_form_with_app_manager_with_user(setup_browser):
+def test_registration_in_simple_form_with_app_manager_with_user():
     with allure.step('Открываем страницу'):
         app.left_panel.open()
         user = User(

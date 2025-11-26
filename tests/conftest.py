@@ -40,6 +40,7 @@ def setup_browser(request):
     host_selenoid = os.getenv("HOST")
 
     browser.config.driver_remote_url = f"https://{login}:{password}@{host_selenoid}"
+    browser.config.base_url = 'https://demoqa.com/forms'
     browser.config.driver_options = options
     browser.config.timeout = 6
 

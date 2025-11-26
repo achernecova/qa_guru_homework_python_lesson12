@@ -13,7 +13,7 @@ class LeftPanelElement:
         self.text_box_in_submenu = browser.element("#item-0")
 
     def open(self):
-        browser.open("https://demoqa.com/forms")
+        browser.open(browser.config.base_url)
         self.open_page_elements_text_box()
 
     def open_page_elements_text_box(self):

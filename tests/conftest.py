@@ -1,7 +1,9 @@
+import os
+
 import pytest
 from selene import browser
 from selenium.webdriver.chrome.options import Options
-
+from dotenv import load_dotenv
 from utils import attach
 
 
@@ -11,6 +13,10 @@ def pytest_addoption(parser):
         help = 'Версия браузера в котором будут запущены тесты',
         default='127.0'
     )
+
+@pytest.fixture(scope='session', autouse=True)
+def load_env():
+    load_dotenv()
 
 
 
@@ -25,8 +31,10 @@ def setup_browser(request):
         "enableVNC": True,
         "enableVideo": True
     })
+    login = os.getenv('LOGIN')
+    password = os.getenv('PASSWORD')
 
-    browser.config.driver_remote_url = "https://user1:1234@selenoid.autotests.cloud/wd/hub"
+    browser.config.driver_remote_url = f"https://{login}:{password}@selenoid.autotests.cloud/wd/hub"
     browser.config.driver_options = options
     browser.config.timeout = 6
 

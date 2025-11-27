@@ -14,6 +14,8 @@ class LeftPanelElement:
 
     def open(self):
         browser.open(browser.config.base_url)
+        browser.driver.execute_script("$('#fixedban').remove()")
+        browser.driver.execute_script("$('footer').remove()")
         self.open_page_elements_text_box()
 
     def open_page_elements_text_box(self):

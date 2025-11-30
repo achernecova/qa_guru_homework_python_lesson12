@@ -24,6 +24,6 @@ class SimplePage:
         browser.element(".mb-1#currentAddress").should(
             have.text(f"Current Address :{data_user_simple_form.current_address}")
         )
-        browser.element(".mb-1#permanentAddress").should(
+        browser.element(".mb-1#permanent Address").should(
             have.text(f"Permananet Address :{data_user_simple_form.permanent_address}")
         )
